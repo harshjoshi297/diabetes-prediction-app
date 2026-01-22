@@ -10,7 +10,7 @@ import joblib
 
 st.set_page_config(page_title="Diabetes Predictor", layout="centered")
 
-st.title("🩺 Diabetes Predictor (Logistic Regression)")
+st.title("Diabetes Predictor (Logistic Regression)")
 st.write("Enter patient details and click **Predict**")
 
 @st.cache_resource
@@ -51,9 +51,9 @@ if submitted:
     st.subheader("Prediction Result")
 
     if pred == 1:
-        st.error(f"⚠️ High risk of Diabetes — Probability: {proba*100:.2f}%")
+        st.error(f" High risk of Diabetes — Probability: {proba*100:.2f}%")
     else:
-        st.success(f"✅ Low risk of Diabetes — Probability: {(1-proba)*100:.2f}%")
+        st.success(f"Low risk of Diabetes — Probability: {(1-proba)*100:.2f}%")
 
     st.metric("Diabetes Probability", f"{proba*100:.2f}%")
     st.progress(min(proba, 1.0))
@@ -62,11 +62,12 @@ if submitted:
         st.write(input_df)
 
     st.warning(
-        "⚠️ This tool is for educational purposes only and should not be used for medical diagnosis."
+        "This tool is for educational purposes only and should not be used for medical diagnosis."
     )
 
 
 # In[ ]:
+
 
 
 
